@@ -1,0 +1,437 @@
+/* 기본으로 설정된 css style을 초기화하는 코드입니다. */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 시작 */
+/* header 부분에 적용될 css파일입니다. */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-2 {
+  padding: 0 2rem 0 0.8rem;
+  font-size: 0.8rem;
+  color: grey;
+  font-weight: bold;
+}
+
+#heart-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0 10rem;
+}
+.header-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-1 {
+  display: flex;
+}
+.login-1 {
+  display: flex;
+  padding: 1rem 0 0 30rem;
+  font-size: 0.5rem;
+  color: grey;
+}
+.logins {
+  padding: 0 0.3rem;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 1.8rem;
+  border: 1px solid purple;
+  border-radius: 0.2rem;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 12rem;
+  height: 1.5rem;
+  font-size: 0.6rem;
+}
+.header-3 {
+  display: flex;
+}
+.header-list {
+  display: flex;
+}
+.header-lists {
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 0.5rem;
+  font-weight: bold;
+  color: grey;
+}
+#header-lists-btn {
+  background-color: white;
+  border: 0.5px solid lightgrey;
+  border-radius: 0.8rem;
+  font-size: 0.5rem;
+  padding: 0.3rem 0.4rem;
+  font-weight: bold;
+  color: grey;
+}
+.highlight {
+  color: purple;
+  font-weight: bold;
+}
+
+/* main */
+.main-1 {
+  display: flex;
+  justify-content: center;
+}
+
+#slideShow {
+  width: 1900px;
+  height: 370px;
+  position: relative;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1900px; /* 슬라이드할 사진과 마진 총 넓이 */
+  transition: 0.5s ease-out;
+}
+.slides:hover {
+  cursor: pointer;
+}
+.slides li:first-child {
+  margin-left: 90px;
+} /* 슬라이드들 옆으로 정렬 */
+.slides li:not(:last-child) {
+  float: left;
+  margin-right: 80px;
+}
+.controller span {
+  position: absolute;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  margin: 0 250px;
+  top: 30%;
+  font-size: 1.3em;
+  cursor: pointer;
+} /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+.controller span:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+.main-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main-2-ment {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5rem 0 3rem 0;
+  font-weight: bold;
+}
+.main-2-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-2-img {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  width: 250px;
+}
+.main-2-name {
+  font-size: 1.1rem;
+  padding: 1rem 0;
+}
+.main-2-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0 0 0.5rem 0;
+}
+
+.main-2-re {
+  font-size: 1rem;
+  color: grey;
+  padding: 0.5rem 0 5rem 0;
+}
+.main-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rem;
+}
+ul {
+  list-style-type: none;
+}
+/* footer부분에 적용될 css입니다. */
+#footer-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  height: 586px;
+  /* position: fixed; */
+  /* transform: translateY(-100%); */
+  border-top: 1px solid rgb(238, 238, 238);
+  margin: 1.5rem 0 0 0;
+}
+/* section1 */
+#happy-customer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  margin: 1.5rem 0;
+  /* width: 100%; */
+}
+#introduce {
+  display: flex;
+  flex-direction: column;
+}
+#happy-introduce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.happy-customer-label {
+  padding-bottom: 17px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+}
+.happy-customer-number {
+  display: block;
+  padding-bottom: 20px;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 700;
+}
+.happy-customer-number span {
+  margin-left: 8px;
+  font-weight: normal;
+  font-size: 16px;
+}
+#happy-customer p {
+  font-size: 14px;
+  margin-top: 2px;
+  color: rgb(153, 153, 153);
+  letter-spacing: -0.5px;
+  line-height: 16.8px;
+}
+#happy-customer button {
+  width: 140px;
+  height: 40px;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 3px;
+  line-height: 39px;
+  text-align: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+#kakao-time {
+  display: flex;
+}
+#one-time {
+  display: flex;
+}
+#large-time {
+  display: flex;
+}
+/* section2 */
+#introduce ul {
+  display: flex;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 0 29px;
+}
+#introduce ul li {
+  padding: 0 5px 0;
+}
+#introduce div {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgb(153, 153, 153);
+  margin-bottom: 40px;
+}
+#introduce span {
+  color: #5f0080;
+  font-weight: bold;
+}
+/* section3 */
+#cert {
+  border-top: 1px solid rgb(238, 238, 238);
+  width: 100%;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+}
+/* section4 */
+#corp {
+  display: flex;
+  padding: 20px 0px 30px;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+  color: rgb(153, 153, 153);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,446 @@
+/* layout의 header에 적용하는 css입니다.*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-2 {
+  padding: 0 2rem 0 0.8rem;
+  font-size: 0.8rem;
+  color: grey;
+  font-weight: bold;
+}
+
+#heart-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0 10rem;
+}
+.header-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-1 {
+  display: flex;
+}
+.login-1 {
+  display: flex;
+  padding: 1rem 0 0 30rem;
+  font-size: 0.5rem;
+  color: grey;
+}
+.logins {
+  padding: 0 0.3rem;
+  text-decoration: none;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 1.8rem;
+  border: 1px solid purple;
+  border-radius: 0.2rem;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 12rem;
+  height: 1.5rem;
+  font-size: 0.6rem;
+}
+.header-3 {
+  display: flex;
+}
+.header-list {
+  display: flex;
+}
+.header-lists {
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 0.5rem;
+  font-weight: bold;
+  color: grey;
+}
+#header-lists-btn {
+  background-color: white;
+  border: 0.5px solid lightgrey;
+  border-radius: 0.8rem;
+  font-size: 0.5rem;
+  padding: 0.3rem 0.4rem;
+  font-weight: bold;
+  color: grey;
+}
+.guest-message {
+  color: #5f0080;
+  font-weight: bold;
+}
+.highlight {
+  color: purple;
+  font-weight: bold;
+}
+.no-decoration {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+button {
+  cursor: pointer;
+}
+
+/* login창에 적용하는 css입니다. */
+.input-group {
+  height: 3rem;
+  width: 19rem;
+  /* padding: 0 0 0 1rem; */
+  border-color: lightgrey;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#login-form button {
+  background-color: #5f0080;
+  color: white;
+  height: 3rem;
+  width: 19rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
+}
+#login-form label {
+  font-weight: bold;
+  padding: 4rem 0 2rem 0;
+}
+#join {
+  background-color: white;
+  color: #5f0080;
+  height: 3rem;
+  width: 19rem;
+  font-weight: bold;
+  border: 1px solid #5f0080;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+#join a {
+  text-decoration: none;
+  margin-top: 25px;
+}
+#email,
+#password {
+  height: 3rem;
+  width: 19rem;
+  padding: 0 0 0 1rem;
+  border-color: lightgrey;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  height: 3rem;
+  width: 19rem;
+  margin-left: 1rem;
+}
+#kakao {
+  margin: 1rem 0 0 32rem;
+}
+
+/* 회원가입 (join) 창에 적용될 css입니다. */
+#join-email,
+#join-nick,
+#join-password {
+  height: 3rem;
+  width: 19rem;
+  /* padding: 0 0 0 1rem; */
+  border-color: lightgrey;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem 0 0 0;
+}
+
+#join-btn {
+  background-color: #5f0080;
+  color: white;
+  height: 3rem;
+  width: 19rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
+}
+
+#join-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#join-form label {
+  font-weight: bold;
+  padding: 4rem 0 2rem 0;
+}
+.timeline {
+  margin-bottom: 20rem;
+  margin-top: 3rem;
+}
+/* 로그인 후 댓글 창에 적용될 css입니다. */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #5f0080; */
+}
+.twits {
+  width: 50rem;
+  border: 2px solid #5f0080;
+  border-radius: 3rem;
+  margin: 10rem 0 0 0;
+}
+.twits label {
+  font-size: 1rem;
+  margin: 6rem 0 2rem 5rem;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#twit {
+  width: 30rem;
+  height: 5rem;
+  border: 1px solid #5f0080;
+  display: flex;
+  margin-top: 3rem;
+}
+#twit-btn {
+  width: 6rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: #5f0080;
+  color: #fff;
+}
+.twit-author {
+  font-size: 1.2rem;
+  margin: 1rem 0 0 3.5rem;
+  font-weight: bold;
+}
+.twit-content {
+  font-size: 1rem;
+  margin: 0.2rem 0 0 3.5rem;
+}
+img {
+  cursor: pointer;
+}
+
+/* layout의 footer부분에 적용될 css입니다. */
+#footer-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  height: 586px;
+  /* position: fixed; */
+  /* transform: translateY(-100%); */
+  border-top: 1px solid rgb(238, 238, 238);
+  margin: 1.5rem 0 0 0;
+}
+/* section1 */
+#happy-customer {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  margin: 1.5rem 0;
+  /* width: 100%; */
+}
+#introduce {
+  display: flex;
+  flex-direction: column;
+}
+#happy-introduce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.happy-customer-label {
+  padding-bottom: 17px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+}
+.happy-customer-number {
+  display: block;
+  padding-bottom: 20px;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 700;
+}
+.happy-customer-number span {
+  margin-left: 8px;
+  font-weight: normal;
+  font-size: 16px;
+}
+#happy-customer p {
+  font-size: 14px;
+  margin-top: 2px;
+  color: rgb(153, 153, 153);
+  letter-spacing: -0.5px;
+  line-height: 16.8px;
+}
+#happy-customer button {
+  width: 140px;
+  height: 40px;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 3px;
+  line-height: 39px;
+  text-align: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+#kakao-time {
+  display: flex;
+}
+#one-time {
+  display: flex;
+}
+#large-time {
+  display: flex;
+}
+/* section2 */
+#introduce ul {
+  display: flex;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 0 29px;
+}
+#introduce ul li {
+  padding: 0 5px 0;
+}
+#introduce div {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgb(153, 153, 153);
+  margin-bottom: 40px;
+}
+#introduce span {
+  color: #5f0080;
+  font-weight: bold;
+}
+/* section3 */
+#cert {
+  border-top: 1px solid rgb(238, 238, 238);
+  width: 100%;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+}
+/* section4 */
+#corp {
+  display: flex;
+  padding: 20px 0px 30px;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+  color: rgb(153, 153, 153);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 로그인 후 보여줄 main 화면입니다. */
+.container {
+  margin-top: 3rem;
+}
+.user-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.half {
+  display: flex;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+#my-profile,
+#logout {
+  background-color: #5f0080;
+  color: #fff;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  text-decoration: none;
+}
+#hash-search {
+  background-color: #5f0080;
+  color: #fff;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  text-decoration: none;
+  width: 8rem;
+}
+#hashtag-form {
+  padding-left: 5rem;
+  padding-top: 1rem;
+}
+#hash-input {
+  width: 10rem;
+  height: 2rem;
+}
+#hash-label {
+  padding-left: 5rem;
+  padding-top: 2rem;
+}
+.twit-follow {
+  background-color: #5f0080;
+  color: #fff;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  text-decoration: none;
+  width: 8rem;
+}
+.twit-img {
+  margin-left: 5rem;
+}
+#img-label {
+  margin: 3rem;
+  padding: 0.7rem;
+  background-color: #5f0080;
+  border-radius: 3rem;
+  color: #fff;
+  font-size: 0.7rem;
+}
+#img {
+  padding: 3rem;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="header-1">
+        <ul class="login-1">
+          <a href="/join" class="no-decoration"
+            ><li class="logins"><span class="highlight">회원가입</span></li></a
+          >
+          |
+          <a href="/" class="no-decoration"><li class="logins">로그인</li></a>
+          |
+          <li class="logins">고객센터</li>
+        </ul>
+      </section>
+      <section class="header-2">
+        <div>
+          <a href="/home"><img src="/images/home-logo.png" width="80rem" /></a>
+        </div>
+        <div class="logo-2">
+          <span class="highlight">마켓컬리</span> | 뷰티컬리<img
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgNyA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTUuMTA4IDd2LS4wMDdMMS45MTEgMi41NzdWN0guMDQ2VjBoMS44NjdsMy4xOTYgNC40MTlWMGgxLjg2N3Y3SDUuMTA4eiIgZmlsbD0iI0ZBNjIyRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo="
+          />
+        </div>
+        <div class="search">
+          <input
+            type="text"
+            class="input"
+            placeholder="검색어를 입력해주세요"
+          />
+          <img src="/images/home-search.png" width="20rem" />
+        </div>
+        <div id="heart-icon">
+          <div><img src="/images/home-place.png" width="30rem" /></div>
+          <div><img src="/images/home-heart.png" width="30rem" /></div>
+          <div>
+            <img src="/images/home-cart.png" width="30rem" />
+          </div>
+        </div>
+      </section>
+      <section class="header-3">
+        <ul class="header-list">
+          <li class="header-lists">
+            <img src="/images/home-list.png" width="20rem" />카테고리
+          </li>
+          <li class="header-lists">신상품</li>
+          <li class="header-lists">베스트</li>
+          <li class="header-lists">알뜰쇼핑</li>
+          <li class="header-lists">특가/혜택</li>
+          <li>
+            <button id="header-lists-btn">
+              <span class="highlight">샛별 · 택배</span> 배송안내
+            </button>
+          </li>
+        </ul>
+      </section>
+    </header>
+
+    <div class="container">
+      <div class="profile">
+        {% if user and user.id %}
+        <div class="user-name">
+          {{user.nick + '님, '+ '오늘도 마켓컬리하세요! ' }}
+        </div>
+
+        <div class="half">
+          <div>팔로잉</div>
+          <div class="count following-count">{{followingCount+'명'}}</div>
+        </div>
+        <div class="half">
+          <div>팔로워</div>
+          <div class="count follower-count">{{followerCount+'명'}}</div>
+        </div>
+
+        <input id="my-id" type="hidden" value="{{user.id}}" />
+        <a id="my-profile" href="/profile" class="btn">내 프로필</a>
+        <a id="logout" href="/auth/logout" class="btn">로그아웃</a>
+        {% else %}
+        <div>
+          <form id="login-form" action="/auth/login" method="post">
+            <label>로그인</label>
+            <div class="input-group">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="아이디를 입력해주세요"
+                required
+                autofocus
+              />
+            </div>
+            <div class="input-group">
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="비밀번호를 입력해주세요"
+                required
+              />
+            </div>
+            <button id="login" type="submit" class="btn">로그인</button>
+            <div id="join"><a href="/join" class="btn">회원가입</a></div>
+            <a id="kakao" href="/auth/kakao" class="btn"
+              ><img src="/images/kakaotalk_logo.png" width="45px"
+            /></a>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+
+      {% block content %} {% endblock %}
+
+      <footer>
+        <div id="footer-all">
+          <section id="happy-introduce">
+            <section id="happy-customer">
+              <div class="happy-customer-label">고객행복센터</div>
+              <div class="happy-customer-number">
+                1644-1107<span>월~토요일 오전 7시 - 오후 6시</span>
+              </div>
+              <div id="kakao-time">
+                <button>카카오톡 문의</button>
+                <p>
+                  월~토요일 | 오전7시-오후6시
+                  <br />
+                  일/공휴일 | 오전 7시-오후1시
+                </p>
+              </div>
+              <div id="one-time">
+                <button>1:1 문의</button>
+                <p>
+                  365일 <br />
+                  고객센터 운영시간에 순차적으로 답변드리겠습니다.
+                </p>
+              </div>
+              <div id="large-time">
+                <button>대량주문 문의</button>
+                <p>
+                  월~금요일 | 오전9시-오후6시
+                  <br />
+                  점심시간 | 낮 12시-오후1시
+                </p>
+              </div>
+            </section>
+            <section id="introduce">
+              <ul>
+                <li>컬리소개</li>
+                <li>컬리소개영상</li>
+                <li>투자정보</li>
+                <li>인재채용</li>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>이용안내</li>
+              </ul>
+              <div>
+                법인명 (상호) : 주식회사 컬리 | 사업자등록번호 : 261-81-23567 |
+                사업자정보 확인 <br />
+                통신판매업 : 제 2018-서울강남-01646 호 | 개인정보보호책임자 :
+                이원준
+                <br />
+                주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동) | 대표이사 :
+                김슬아
+                <br />
+                입점문의 : <span>입점문의하기</span>제휴문의 :
+                <span>business@kurlycorp.com</span>
+                <br />
+                채용문의 : <span>recruit@kurlycorp.com</span>
+                <br />
+                팩스: 070 - 7500 - 6098
+                <br />
+                <img src="/images/sns.png" alt="SNS" width="300" />
+              </div>
+            </section>
+          </section>
+          <section id="cert">
+            <img
+              src="/images/certification.png"
+              alt="certification"
+              width="1500"
+            />
+          </section>
+          <section id="corp">
+            컬리에서 판매되는 상품 중에는 컬리에 입점한 개별 판매자가 판매하는
+            마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+            <br />
+            마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서
+            통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질,
+            교환/환불 등 의무와 책임을 부담하지 않습니다.
+            <br />© KURLY CORP. ALL RIGHTS RESERVED
+          </section>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () => {
+        if (new URL(location.href).searchParams.get("loginError")) {
+          alert(new URL(location.href).searchParams.get("loginError"));
+        }
+      };
+    </script>
+    {% block script %} {% endblock %}
+  </body>
+</html>

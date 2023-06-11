@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>컬리 - 마켓컬리/뷰티컬리</title>
+    <link rel="stylesheet" href="FrontHome.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="header-1">
+        <ul class="login-1">
+          <a href="/join" class="no-decoration"
+            ><li class="logins">
+              <span class="highlight">회원가입</span>
+            </li></a
+          >
+          | {% if user and user.id %}
+          <a href="/" class="no-decoration"><li class="logins">로그아웃</li></a>
+
+          {% else %}
+          <a href="/" class="no-decoration"><li class="logins">로그인</li></a>
+
+          {% endif %} |
+          <li class="logins">고객센터</li>
+        </ul>
+        <br />
+      </section>
+      <section class="header-2">
+        <div>
+          <img src="/images/home-logo.png" width="80rem" />
+        </div>
+        <div class="logo-2">
+          <span class="highlight">마켓컬리</span> | 뷰티컬리<img
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgNyA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTUuMTA4IDd2LS4wMDdMMS45MTEgMi41NzdWN0guMDQ2VjBoMS44NjdsMy4xOTYgNC40MTlWMGgxLjg2N3Y3SDUuMTA4eiIgZmlsbD0iI0ZBNjIyRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+Cjwvc3ZnPgo="
+          />
+        </div>
+        <div class="search">
+          <input
+            type="text"
+            class="input"
+            placeholder="검색어를 입력해주세요"
+          />
+          <img src="/images/home-search.png" width="20rem" />
+        </div>
+        <div id="heart-icon">
+          <div><img src="/images/home-place.png" width="30rem" /></div>
+          <div><img src="/images/home-heart.png" width="30rem" /></div>
+          <div>
+            <img src="/images/home-cart.png" width="30rem" />
+          </div>
+        </div>
+      </section>
+      <section class="header-3">
+        <ul class="header-list">
+          <li class="header-lists">
+            <img src="/images/home-list.png" width="20rem" />카테고리
+          </li>
+          <li class="header-lists">신상품</li>
+          <li class="header-lists">베스트</li>
+          <li class="header-lists">알뜰쇼핑</li>
+          <li class="header-lists">특가/혜택</li>
+          <li>
+            <button id="header-lists-btn">
+              <span class="highlight">샛별 · 택배</span> 배송안내
+            </button>
+          </li>
+        </ul>
+      </section>
+    </header>
+
+    <main class="main">
+      <section class="main-1">
+        <div id="slideShow">
+          <ul class="slides">
+            <li>
+              <img
+                src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/5b4e9985-9b15-4852-ae89-ffbed676c7c7.jpg"
+              />
+            </li>
+            <li>
+              <img
+                src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/f70905f4-7ef0-4b52-98a3-204c85a3d1ca.png"
+              />
+            </li>
+            <li>
+              <img
+                src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/6dcb9a88-452e-4545-a452-0b9855112f7f.jpg"
+              />
+            </li>
+            <li>
+              <img
+                src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/cbd9a5cc-a0f8-4bd7-ba85-92ede8fc82c9.jpg"
+              />
+            </li>
+            <li>
+              <img
+                src="https://product-image.kurly.com/cdn-cgi/image/quality=85/banner/main/pc/img/f70905f4-7ef0-4b52-98a3-204c85a3d1ca.png"
+              />
+            </li>
+          </ul>
+        </div>
+        <p class="controller">
+          <span class="prev">&lang;</span>
+          <span class="next">&rang;</span>
+        </p>
+      </section>
+
+      <section class="main-2">
+        <div id="main-2-ment">
+          {% if user and user.id %} {{user.nick + '님! '}} {% endif %} 이 상품
+          어때요?
+        </div>
+        <div class="main-2-wrap">
+          <div class="main-2-img">
+            <img
+              src="https://img-cf.kurly.com/shop/data/goods/1637147626889l0.jpg"
+              width="230px"
+            /><span class="main-2-name">[KF365] 1+등급 무항생제 특란 20구</span>
+            <span class="main-2-price">6,205원</span>
+            <span class="main-2-re">후기 9,999+</span>
+            <!-- <button id="cartIn" data-attribute="Big egg">장바구니 담기</button> -->
+          </div>
+          <div class="main-2-img">
+            <img
+              src="https://img-cf.kurly.com/shop/data/goods/1583817046139l0.jpg"
+              width="230px"
+            /><span class="main-2-name">[그랜드벨지안] 초콜릿 트윅스 4종</span>
+            <span class="main-2-price"> 4,000원</span>
+            <span class="main-2-re">후기 999+</span>
+          </div>
+          <div class="main-2-img">
+            <img
+              src="https://img-cf.kurly.com/shop/data/goods/1589873216873l0.jpg"
+              width="230px"
+            /><span class="main-2-name"
+              >[오덴세] 아틀리에 노드 세트 2종 (택1)</span
+            >
+            <span class="main-2-price">139,000원~</span>
+            <span class="main-2-re">후기 46</span>
+          </div>
+          <div class="main-2-img">
+            <img
+              src="https://img-cf.kurly.com/shop/data/goods/1656567944707l0.jpg"
+              width="230px"
+            />
+            <span class="main-2-name">[떡편] 쌀케이크 세트 (커피+고구마)</span>
+            <span class="main-2-price"> 13,900원</span>
+            <span class="main-2-re"> 후기 256</span>
+          </div>
+        </div>
+      </section>
+      <section class="main-3">
+        <img
+          src="https://product-image.kurly.com/banner/random-band/mobile/img/585a35ba-4d17-428d-ae78-750c5dd66189.jpg"
+        />
+      </section>
+    </main>
+    <footer>
+      <div id="footer-all">
+        <section id="happy-introduce">
+          <section id="happy-customer">
+            <div class="happy-customer-label">고객행복센터</div>
+            <div class="happy-customer-number">
+              1644-1107<span>월~토요일 오전 7시 - 오후 6시</span>
+            </div>
+            <div id="kakao-time">
+              <button>카카오톡 문의</button>
+              <p>
+                월~토요일 | 오전7시-오후6시
+                <br />
+                일/공휴일 | 오전 7시-오후1시
+              </p>
+            </div>
+            <div id="one-time">
+              <button>1:1 문의</button>
+              <p>
+                365일 <br />
+                고객센터 운영시간에 순차적으로 답변드리겠습니다.
+              </p>
+            </div>
+            <div id="large-time">
+              <button>대량주문 문의</button>
+              <p>
+                월~금요일 | 오전9시-오후6시
+                <br />
+                점심시간 | 낮 12시-오후1시
+              </p>
+            </div>
+          </section>
+          <section id="introduce">
+            <ul>
+              <li>컬리소개</li>
+              <li>컬리소개영상</li>
+              <li>투자정보</li>
+              <li>인재채용</li>
+              <li>이용약관</li>
+              <li>개인정보처리방침</li>
+              <li>이용안내</li>
+            </ul>
+            <div>
+              법인명 (상호) : 주식회사 컬리 | 사업자등록번호 : 261-81-23567 |
+              사업자정보 확인 <br />
+              통신판매업 : 제 2018-서울강남-01646 호 | 개인정보보호책임자 :
+              이원준
+              <br />
+              주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동) | 대표이사 :
+              김슬아
+              <br />
+              입점문의 : <span>입점문의하기</span>제휴문의 :
+              <span>business@kurlycorp.com</span>
+              <br />
+              채용문의 : <span>recruit@kurlycorp.com</span>
+              <br />
+              팩스: 070 - 7500 - 6098
+              <br />
+              <img src="/images/sns.png" alt="SNS" width="300" />
+            </div>
+          </section>
+        </section>
+        <section id="cert">
+          <img
+            src="/images/certification.png"
+            alt="certification"
+            width="1500"
+          />
+        </section>
+        <section id="corp">
+          컬리에서 판매되는 상품 중에는 컬리에 입점한 개별 판매자가 판매하는
+          마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+          <br />
+          마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서
+          통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질, 교환/환불
+          등 의무와 책임을 부담하지 않습니다.
+          <br />© KURLY CORP. ALL RIGHTS RESERVED
+        </section>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/frontHome.js"></script>
+  </body>
+</html>
