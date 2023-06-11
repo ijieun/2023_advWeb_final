@@ -7,6 +7,7 @@ const nunjucks = require("nunjucks");
 const dotenv = require("dotenv");
 const passport = require("passport");
 
+// 필요한 모듈 및 설정을 가져옵니다.
 dotenv.config();
 const homeRouter = require("./routes/home");
 const pageRouter = require("./routes/page");
@@ -17,13 +18,19 @@ const { sequelize } = require("./models");
 const passportConfig = require("./passport");
 
 const app = express();
-passportConfig(); // 패스포트 설정
+
+// 패스포트 설정
+passportConfig();
+
+// Express 앱의 설정을 수행합니다.
 app.set("port", process.env.PORT || 3000);
 app.set("view engine", "html");
 nunjucks.configure("views", {
   express: app,
   watch: true,
 });
+
+// 데이터베이스 연결
 sequelize
   .sync({ force: false })
   .then(() => {
@@ -33,6 +40,7 @@ sequelize
     console.error(err);
   });
 
+// 미들웨어를 등록합니다.
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/img", express.static(path.join(__dirname, "uploads")));
@@ -53,18 +61,21 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// 라우터를 등록합니다.
 app.use("/", pageRouter);
 app.use("/home", homeRouter);
 app.use("/auth", authRouter);
 app.use("/post", postRouter);
 app.use("/user", userRouter);
 
+// 없는 라우터에 대한 처리
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
   error.status = 404;
   next(error);
 });
 
+// 에러 핸들러 미들웨어
 app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = process.env.NODE_ENV !== "production" ? err : {};
@@ -72,6 +83,7 @@ app.use((err, req, res, next) => {
   res.render("error");
 });
 
+// 서버 실행
 app.listen(app.get("port"), () => {
   console.log(app.get("port"), "번 포트에서 대기중");
 });

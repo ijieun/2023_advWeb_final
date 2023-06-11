@@ -1,29 +1,33 @@
-const bcrypt = require('bcrypt');
-const passport = require('passport');
-const User = require('../models/user');
+const bcrypt = require("bcrypt");
+const passport = require("passport");
+const User = require("../models/user");
 
+// 회원 가입 처리
 exports.join = async (req, res, next) => {
   const { email, nick, password } = req.body;
   try {
+    // 이미 존재하는 이메일인지 확인
     const exUser = await User.findOne({ where: { email } });
     if (exUser) {
-      return res.redirect('/join?error=exist');
+      return res.redirect("/join?error=exist");
     }
+    // 비밀번호를 해싱하여 사용자 생성
     const hash = await bcrypt.hash(password, 12);
     await User.create({
       email,
       nick,
       password: hash,
     });
-    return res.redirect('/');
+    return res.redirect("/");
   } catch (error) {
     console.error(error);
     return next(error);
   }
-}
+};
 
+// 로그인 처리
 exports.login = (req, res, next) => {
-  passport.authenticate('local', (authError, user, info) => {
+  passport.authenticate("local", (authError, user, info) => {
     if (authError) {
       console.error(authError);
       return next(authError);
@@ -31,18 +35,20 @@ exports.login = (req, res, next) => {
     if (!user) {
       return res.redirect(`/?error=${info.message}`);
     }
+    // 로그인 성공 시 로그인 처리
     return req.login(user, (loginError) => {
       if (loginError) {
         console.error(loginError);
         return next(loginError);
       }
-      return res.redirect('/');
+      return res.redirect("/");
     });
   })(req, res, next); // 미들웨어 내의 미들웨어에는 (req, res, next)를 붙입니다.
 };
 
+// 로그아웃 처리
 exports.logout = (req, res) => {
   req.logout(() => {
-    res.redirect('/');
+    res.redirect("/");
   });
 };
