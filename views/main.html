@@ -51,13 +51,16 @@
       <input type="hidden" value="{{twit.User.id}}" class="twit-user-id" />
       <input type="hidden" value="{{twit.id}}" class="twit-id" />
       <div class="twit-author">{{twit.User.nick}}</div>
-      {% if not followingIdList.includes(twit.User.id) and twit.User.id !==
-      user.id %}
+      {% if user.id === twit.User.id %}
+      <button class="twit-delete">삭제</button>
+      {% endif %} {% if not followingIdList.includes(twit.User.id) and
+      twit.User.id !== user.id %}
       <button class="twit-follow">팔로우하기</button>
-
+      {% endif %} {% if user and followingIdList.includes(twit.User.id) and
+      twit.User.id !== user.id %}
+      <button class="twit-unfollow">언팔로우하기</button>
       {% endif %}
       <div class="twit-content">{{twit.content}}</div>
-
       {% if twit.img %}
       <div class="twit-img">
         <img src="{{twit.img}}" width="300rem" alt="섬네일" />
@@ -86,6 +89,7 @@
         });
     });
   }
+
   document.querySelectorAll(".twit-follow").forEach(function (tag) {
     tag.addEventListener("click", function () {
       const myId = document.querySelector("#my-id");
@@ -95,6 +99,44 @@
           if (confirm("팔로잉하시겠습니까?")) {
             axios
               .post(`/user/${userId}/follow`)
+              .then(() => {
+                location.reload();
+              })
+              .catch((err) => {
+                console.error(err);
+              });
+          }
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll(".twit-delete").forEach(function (tag) {
+    tag.addEventListener("click", function () {
+      if (confirm("삭제하시겠습니까?")) {
+        const userId = tag.parentNode.querySelector(".twit-user-id").value;
+        const twitId = tag.parentNode.querySelector(".twit-id").value;
+        console.log(userId, twitId);
+        try {
+          axios.delete(`/post/${twitId}`).then(() => {
+            location.reload();
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    });
+  });
+  document.querySelectorAll(".twit-unfollow").forEach(function (tag) {
+    tag.addEventListener("click", function () {
+      const myId = document.querySelector("#my-id");
+      if (myId) {
+        const userId = tag.parentNode.querySelector(".twit-user-id").value;
+        if (userId !== myId.value) {
+          if (confirm("언팔로우하시겠습니까?")) {
+            console.log(userId);
+            axios
+              .delete(`/user/${userId}/follow`)
               .then(() => {
                 location.reload();
               })
