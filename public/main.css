@@ -181,10 +181,13 @@ button {
   border-color: lightgrey;
   border-radius: 5px;
   font-size: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem 0 0 0;
-}
+  /* margin-bottom: 3rem; */
 
+  padding-left: 1rem;
+}
+.input-group {
+  padding-bottom: 1rem;
+}
 #join-btn {
   background-color: #5f0080;
   color: white;
@@ -217,6 +220,10 @@ button {
   justify-content: center;
   /* border: 1px solid #5f0080; */
 }
+#twit {
+  width: 40rem;
+  height: 5rem;
+}
 .twits {
   width: 50rem;
   border: 2px solid #5f0080;
@@ -232,13 +239,7 @@ button {
   align-items: center;
   justify-content: center;
 }
-#twit {
-  width: 30rem;
-  height: 5rem;
-  border: 1px solid #5f0080;
-  display: flex;
-  margin-top: 3rem;
-}
+
 #twit-btn {
   width: 6rem;
   height: 2rem;
@@ -443,4 +444,34 @@ img {
 }
 #img {
   padding: 3rem;
+}
+
+#edit-nick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 2rem;
+  font-size: 0.6rem;
+}
+#edit-btn {
+  margin: 3rem;
+  padding: 0.7rem;
+  background-color: #5f0080;
+  border-radius: 3rem;
+  color: #fff;
+  font-size: 0.7rem;
+}
+.twit-delete,
+.twit-unfollow {
+  margin: 3rem;
+  padding: 0.7rem;
+  background-color: #5f0080;
+  border-radius: 3rem;
+  color: #fff;
+  font-size: 0.7rem;
+}
+#following-nick {
+  font-weight: bold;
+  color: #5f0080;
 }
