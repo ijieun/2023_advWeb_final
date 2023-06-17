@@ -1,4 +1,4 @@
-// main 슬라이드 이미지 구현
+// home화면 움직이는 배너 js 구현
 
 // 슬라이드 요소들을 선택
 let slides = document.querySelector(".slides");

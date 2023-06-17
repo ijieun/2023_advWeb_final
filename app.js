@@ -1,3 +1,22 @@
+// 주제: 마켓컬리 홈페이지에서 상품 사진 리뷰를 작성하고, 검색할 수 있는 기능을 제공합니다.
+
+// 핵심 기능:
+// 로그인 기능, 리뷰 올리기 기능(post), 리뷰 검색하기 기능(get), 회원 팔로우 기능(post)
+
+// 추가 기능:
+// 이미지 업로드 기능(upload) 및 이미지를 로컬에서 찾아서 삭제하는 기능(delete),
+// 작성한 리뷰 삭제 기능(delete 요청),
+// 회원 언팔로우 기능(delete 요청),
+// 회원 닉네임 수정 기능(update),
+// 태그를 이용한 리뷰 검색 기능(get),
+// 마켓컬리 홈페이지 기능(slide banner구현 등)
+
+// 기능 파일 위치
+// 리뷰 삭제 기능 (/routes/post.js)
+// 언팔로우 기능 (/routes/user.js)
+// 닉네임 변경 기능 (/routes/user.js)
+// 마켓컬리 홈페이지 구현 (/views/home.html)
+
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");

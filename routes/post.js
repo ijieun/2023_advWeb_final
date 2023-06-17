@@ -59,10 +59,10 @@ router.post("/", isLoggedIn, upload2.none(), async (req, res, next) => {
   }
 });
 
-// 삭제
+// 리뷰 삭제 기능
 router.route("/:id").delete(async (req, res, next) => {
   try {
-    // 이미지가 있디면 로컬에서 찾아서 삭제해줌
+    // 이미지가 있디면 로컬에서 find해서 unlinkSync해준다.
     const checkImage = await Post.findOne({ where: { id: req.params.id } });
     if (checkImage) {
       console.log(checkImage.img);
